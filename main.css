@@ -1,0 +1,57 @@
+/* main.css */
+
+html {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 10px;
+	font-family: verdana, arial, sans-serif;
+	color: #555;
+}
+div.timeline {
+	position: relative;
+	padding: 5px 0 15px;
+	width: 500px;
+	border: 1px solid #eee;
+}
+div.timeline * {
+	/* unselectable */
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+div.timeline div.bar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: #eee;
+	z-index: 1;
+}
+div.timeline div.bar span {
+	position: absolute;
+	bottom: -15px;
+	left: -15px;
+	width: 30px;
+	font-size: 10px;
+	text-align: center;
+	color: #999;
+}
+div.timeline div.event {
+	position: relative;
+	display: inline-block;
+	margin: 8px 0 0;
+	/*height: 2px;*/
+	/*background: #9bcff1;*/
+	border-top: 2px solid #9bcff1;
+	z-index: 2;
+}
+div.timeline div.event p {
+	/*position: absolute;*/
+	padding: 5px 0 0;
+	margin: 0;
+	font-size: 11px;
+}
