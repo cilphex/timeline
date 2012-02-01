@@ -41,26 +41,26 @@ $(function() {
 		this.setupTimeInfo = function() {
 			var start = this.opts.start;
 			var end = this.opts.end;
-
-			var sd1 = start.match(/(\d+)\/(\d+)\/(\d+)/);
-			var sd2 = start.match(/(\d+)\/(\d+)/);
-
-			var ed1 = end.match(/(\d+)\/(\d+)\/(\d+)/);
-			var ed2 = end.match(/(\d+)\/(\d+)/);
-
-			if (sd1)
-				this.time_info.start = Math.round(new Date(sd1[3], sd1[1]-1, sd1[2]).valueOf() / 1000);
-			else if (sd2)
-				this.time_info.start = Math.round(new Date(sd2[2], sd2[1]-1).valueOf() / 1000);
-			else
-				this.time_info.start = null;
-
-			if (ed1)
-				this.time_info.end = Math.round(new Date(ed1[3], ed1[1]-1, ed1[2]).valueOf() / 1000);
-			else if (ed2)
-				this.time_info.end = Math.round(new Date(ed2[2], ed2[1]-1).valueOf() / 1000);
-			else
-				this.time_info.end = null;
+			if (start) {
+				var sd1 = start.match(/(\d+)\/(\d+)\/(\d+)/);
+				var sd2 = start.match(/(\d+)\/(\d+)/);
+				if (sd1)
+					this.time_info.start = Math.round(new Date(sd1[3], sd1[1]-1, sd1[2]).valueOf() / 1000);
+				else if (sd2)
+					this.time_info.start = Math.round(new Date(sd2[2], sd2[1]-1).valueOf() / 1000);
+				else
+					this.time_info.start = null;
+			}
+			if (end) {
+				var ed1 = end.match(/(\d+)\/(\d+)\/(\d+)/);
+				var ed2 = end.match(/(\d+)\/(\d+)/);
+				if (ed1)
+					this.time_info.end = Math.round(new Date(ed1[3], ed1[1]-1, ed1[2]).valueOf() / 1000);
+				else if (ed2)
+					this.time_info.end = Math.round(new Date(ed2[2], ed2[1]-1).valueOf() / 1000);
+				else
+					this.time_info.end = null;
+			}
 		};
 
 		this.initialize();
